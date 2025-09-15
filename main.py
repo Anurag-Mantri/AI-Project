@@ -107,28 +107,6 @@ bl_back = tk.Button(inp_frame,
                     command=lambda: change_background("white"))  # Use lambda to pass color
 bl_back.grid(row=2, column=6, padx=5)
 
-# Start the Tkinter event loop
-root.mainloop()
-
-
-
-
-
-
-
-
-'''
-# Reset Button
-res_button = tk.Button(inp_frame, text = "Reset History",  bg = "red", command = reset())
-res_button.grid(row = 1, column = 0, padx = 5)
-
-# Save Button
-save_button = tk.Button(inp_frame, text = "Save History", bg = "light green", command = save())
-save_button.grid(row = 1, column = 1, padx = 5)
-''' 
-
-
-'''
 # Reseting the context if the user wants
 def reset():
     global context
@@ -141,4 +119,24 @@ def save():
     with open("chat_history.txt", "w") as file:
         file.write(chat_window.get("1.0", tk.END))
     chat_window.insert(tk.END, "Llama3: Chat History Saved!")
-''' 
+
+
+
+
+# Reset Button
+res_button = tk.Button(inp_frame, text = "Reset History",  bg = "red", command = reset)
+res_button.grid(row = 1, column = 0, padx = 5)
+
+# Save Button
+save_button = tk.Button(inp_frame, text = "Save History", bg = "light green", command = save)
+save_button.grid(row = 1, column = 1, padx = 5)
+
+# Start the Tkinter event loop
+root.mainloop()
+
+
+ 
+
+
+
+
